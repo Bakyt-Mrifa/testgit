@@ -1,21 +1,26 @@
 package kg.megacom.models.entity;
 
-import javax.persistence.*;
-import java.time.LocalDate;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.util.Date;
+
+@Data
+@Entity
+@Table(name="lots")
 public class Lot {
     @Id
     @GeneratedValue
     @Column(name="lot_id")
-    private Integer id;
+    private Long id;
     private String name;
     private double minPrice;
     private double priceFotBuy;
 
     private double step;
 
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private Date startDate;
+    private Date endDate;
 
     @ManyToOne
     @JoinColumn(name = "status_id")

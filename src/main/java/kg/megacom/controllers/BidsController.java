@@ -1,16 +1,22 @@
 package kg.megacom.controllers;
 
-public class AuctionController {
+import kg.megacom.models.entity.Bid;
+import kg.megacom.services.BidService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
-    /*
-    *  @Autowired
-    private TeacherService teacherService;
+public class BidsController {
+    @Autowired
+    private BidService bidService;
     @PostMapping(value = "/save")
-    public Teacher saveTeacher(@RequestBody Teacher teacher) {
-        return teacherService.saveTeacher(teacher);
+    public Bid saveBids(@RequestBody Bid bid) {
+        return bidService.saveBid(bid);
     }
     @GetMapping("/get/{id}")
-    public Teacher getTeacherById(@PathVariable Long id){
-        return teacherService.findTeacherById(id);
-    }*/
+    public Bid getBidById(@PathVariable Long id){
+        return bidService.findBidById(id);
+    }
 }

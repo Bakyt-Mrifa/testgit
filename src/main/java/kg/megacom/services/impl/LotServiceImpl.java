@@ -26,8 +26,9 @@ public class LotServiceImpl implements LotService {
     }
 
     @Override
-    public Lot findLotById(Long id) {
+    public LotDto findLotById(Long id) {
         Lot lot=lotRepository.findById(id).orElse(new Lot());
-        return lot;
+        LotDto lotDto=ClassMapper.INSTANCE.lotToLotDto(lot);
+        return lotDto;
     }
 }

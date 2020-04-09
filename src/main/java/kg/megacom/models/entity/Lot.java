@@ -15,14 +15,14 @@ public class Lot {
     private Long id;
     private String name;
     private double minPrice;
-    private double priceFotBuy;
+    private double priceForBuy;
 
     private double step;
 
     private Date startDate;
     private Date endDate;
 
-    @ManyToOne
+    @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "status_id")
     private Status status;
 

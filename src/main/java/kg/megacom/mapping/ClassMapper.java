@@ -18,6 +18,7 @@ public interface ClassMapper {
 //Lot
     Lot lotDtoToLot (LotDto lotDto);
     LotDto lotToLotDto (Lot lot);
+    void updateLotFromDto(LotDto lotDto, Lot lot);
 
 //Status
     Status statusDtoToStatus (StatusDto statusDto);

@@ -1,15 +1,18 @@
 package kg.megacom.models.dto;
 
-import java.time.LocalDate;
+import lombok.Data;
 
+import java.util.Date;
+
+@Data
 public class LotDto {
     private Integer id;
     private String name;
     private double minPrice;
-    private double priceFotBuy;
+    private double priceForBuy;
     private double step;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private Date startDate;
+    private Date endDate;
     private StatusDto statusDto;
 
 }

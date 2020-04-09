@@ -1,5 +1,7 @@
 package kg.megacom.services.impl;
 
+import kg.megacom.mapping.ClassMapper;
+import kg.megacom.models.dto.LotDto;
 import kg.megacom.models.entity.Lot;
 import kg.megacom.repository.LotRepository;
 import kg.megacom.services.LotService;
@@ -12,8 +14,14 @@ public class LotServiceImpl implements LotService {
     @Autowired
     private LotRepository lotRepository;
     @Override
-    public Lot saveLot(Lot lot) {
-        return lotRepository.save(lot);
+    public LotDto saveLot(LotDto lotDto) {
+        Lot lot = null;
+        ClassMapper.INSTANCE.updateLotFromDto(lotDto, lot);
+        System.out.println("This is object of Lot: " + lot);
+        lotRepository.save(lot);
+        lotDto=ClassMapper.INSTANCE.lotToLotDto(lot);
+        System.out.println("This is object of LotDto: " + lotDto);
+        return lotDto;
     }
 
     @Override

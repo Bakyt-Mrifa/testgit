@@ -1,9 +1,10 @@
 package kg.megacom.services;
 
+import kg.megacom.models.dto.LotDto;
 import kg.megacom.models.entity.Lot;
 
 public interface LotService {
-    Lot saveLot(Lot lot);
+    LotDto saveLot(LotDto lotDto);
     Lot findLotById(Long id);
 
 }

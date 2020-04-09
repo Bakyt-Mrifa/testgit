@@ -18,7 +18,7 @@ public class LotController {
         return lotService.saveLot(lotDto);
     }
     @GetMapping("/get/{id}")
-    public Lot getLotById(@PathVariable Long id){
+    public LotDto getLotById(@PathVariable Long id){
         return lotService.findLotById(id);
     }
 

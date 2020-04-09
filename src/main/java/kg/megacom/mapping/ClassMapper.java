@@ -2,8 +2,11 @@ package kg.megacom.mapping;
 
 import kg.megacom.models.dto.*;
 import kg.megacom.models.entity.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
+@Mapper
 public interface ClassMapper {
 
     ClassMapper INSTANCE= Mappers.getMapper(ClassMapper.class);
@@ -18,7 +21,7 @@ public interface ClassMapper {
 //Lot
     Lot lotDtoToLot (LotDto lotDto);
     LotDto lotToLotDto (Lot lot);
-    void updateLotFromDto(LotDto lotDto, Lot lot);
+    void updateLotFromDto(LotDto lotDto, @MappingTarget Lot lot);
 
 //Status
     Status statusDtoToStatus (StatusDto statusDto);

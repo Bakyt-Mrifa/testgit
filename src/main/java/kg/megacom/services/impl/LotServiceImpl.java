@@ -15,10 +15,11 @@ public class LotServiceImpl implements LotService {
     private LotRepository lotRepository;
     @Override
     public LotDto saveLot(LotDto lotDto) {
-        Lot lot = null;
-        ClassMapper.INSTANCE.updateLotFromDto(lotDto, lot);
+/*        Lot lot = null;
+        ClassMapper.INSTANCE.updateLotFromDto(lotDto, lot);*/
+        Lot lot=ClassMapper.INSTANCE.lotDtoToLot(lotDto);
+        lot=lotRepository.save(lot);
         System.out.println("This is object of Lot: " + lot);
-        lotRepository.save(lot);
         lotDto=ClassMapper.INSTANCE.lotToLotDto(lot);
         System.out.println("This is object of LotDto: " + lotDto);
         return lotDto;

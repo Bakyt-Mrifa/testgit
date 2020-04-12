@@ -2,10 +2,8 @@ package kg.megacom.controllers;
 
 import io.swagger.annotations.Api;
 import kg.megacom.models.dto.LotDto;
-import kg.megacom.models.entity.Lot;
 import kg.megacom.services.LotService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
